@@ -19,5 +19,9 @@ mongoose.connect(process.env.MONGO_URI,{
 }) .then(()=> console.log('MongoDB is Connected'))
     .catch(()=> console.error(err));
 
+app.get('/', (req, res) => {
+  res.send('MEETX BACKEND API ASSESSMENT');
+});
+
 const PORT = process.env.PORT || 5000;
 app.listen(PORT,()=> console.log(`Server is Running  Succesfully on http://localhost:${PORT}`));
